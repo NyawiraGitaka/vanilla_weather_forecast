@@ -7,7 +7,6 @@ function updateWeatherDetails(response) {
   let timeValue = document.querySelector("#time-details");
   let date = new Date(response.data.time * 1000);
   let iconImage = document.querySelector("#icon");
-  
 
   iconImage.innerHTML = `<img src=" ${response.data.condition.icon_url} "class="weather-icon">`;
   timeValue.innerHTML = formatDate(date);
@@ -56,6 +55,30 @@ function getCity(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = " ";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      ` <div class="weather-forecast-day">
+          <div class="weather-forecast-date"> ${day} </div>
+          <div class="weather-forecast-icon"> 🌤️</div>
+          <div class="weather-forecast-temps">
+            <span class="forecast-weather-max">
+              18°
+            </span>
+            <span class="forecast-weather-min">
+              12°
+            </span>
+          </div>
+        </div>`;
+  });
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", getCity);
 searchCity("Tallinn");
+displayForecast();
