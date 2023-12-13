@@ -62,7 +62,7 @@ main {
   width: 88px;
   height: 88px;
   position: relative;
-  top: 5px;
+  top: -10px;
 }
 .temp-value {
   font-size: 88px;
@@ -77,20 +77,18 @@ main {
   line-height: 1;
   font-size: 28px;
 }
-.forecast-weather{
+.forecast-weather {
   margin-top: 20px;
   text-align: center;
-  color: #000;
 }
-.weather-forecast-date{
+.weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
-  
+  color: #bababa;
 }
-.weather-forecast-temps{
+.weather-forecast-temps {
   font-size: 13px;
 }
-.forecast-weather-min{
+.forecast-weather-min {
   opacity: 0.5;
 }
 footer {
