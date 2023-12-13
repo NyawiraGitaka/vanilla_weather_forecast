@@ -17,6 +17,8 @@ function updateWeatherDetails(response) {
   weatherCondition.innerHTML = response.data.condition.description;
   cityTemp.innerHTML = Math.round(response.data.temperature.current);
   cityName.innerHTML = response.data.city;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -54,8 +56,15 @@ function getCity(event) {
 
   searchCity(searchInput.value);
 }
+function getForecast(city){
+  let apiKey = "314o3fa79375c2341f0ct1d3593ab8a2";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+  
+}
+function displayForecast(response) {
+  console.log(response.data);
 
-function displayForecast() {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = " ";
   days.forEach(function (day) {
@@ -81,4 +90,5 @@ function displayForecast() {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", getCity);
 searchCity("Tallinn");
-displayForecast();
+
+
