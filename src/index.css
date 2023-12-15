@@ -1,6 +1,7 @@
 body {
-  background: #d2daff;
-  font-family: "Nunito", sans-serif;
+  /* background: #d2daff; */
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/107/335/original/forest_photo.jpeg?1702670550");
+  background-size: 1000px;
 }
 a {
   color: blueviolet;
