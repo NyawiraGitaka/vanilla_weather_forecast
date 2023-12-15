@@ -81,7 +81,6 @@ main {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  text-align: center;
 }
 .weather-forecast-date {
   font-size: 16px;
@@ -92,6 +91,12 @@ main {
 }
 .forecast-weather-min {
   opacity: 0.5;
+}
+.weather-forecast-icon {
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 auto;
 }
 footer {
   border-top: 1px solid #d2daff;
